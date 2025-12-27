@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -12,17 +12,64 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  maximumScale: 5.0,
+  userScalable: true,
+};
+
 export const metadata: Metadata = {
   title: "FirePro | Expert Fire Safety & Security Solutions",
   description: "FirePro provides expert fire safety, oil spill cleanup, and security solutions. Ensuring public safety and property protection from fire-related hazards.",
   keywords: "fire safety, fire prevention, fire suppression, fire alarm installation, fire safety training, emergency planning, oil spill cleanup, security solutions",
-  viewport: "width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes",
+  authors: [{ name: "FirePro" }],
+  creator: "FirePro",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://firepro.com",
+    siteName: "FirePro",
     title: "FirePro | Expert Fire Safety & Security Solutions",
-    description: "Professional fire safety and security services available 24/7",
+    description: "Professional fire safety, oil spill cleanup, and security solutions available 24/7",
+    images: [
+      {
+        url: "/Firepro1.jpg",
+        width: 1200,
+        height: 630,
+        alt: "FirePro Fire Safety Services",
+        type: "image/jpeg",
+      },
+      {
+        url: "/logo-full.svg",
+        width: 300,
+        height: 100,
+        alt: "FirePro Logo",
+        type: "image/svg+xml",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FirePro | Expert Fire Safety & Security Solutions",
+    description: "Professional fire safety, oil spill cleanup, and security solutions available 24/7",
+    images: ["/Firepro1.jpg"],
+    creator: "@firepro",
+  },
+  alternates: {
+    canonical: "https://firepro.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
 };
 

@@ -138,12 +138,12 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="hidden lg:block"
           >
-            <div className="relative">
-              {/* Floating Card 1 */}
+            <div className="space-y-6">
+              {/* Top Card - Fire Prevention */}
               <motion.div
-                animate={{ y: [0, -10, 0] }}
+                animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -left-4 bg-white rounded-2xl p-6 shadow-2xl w-64"
+                className="bg-white rounded-2xl p-6 shadow-2xl w-80"
               >
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 bg-fire-red/10 rounded-full flex items-center justify-center">
@@ -159,31 +159,30 @@ export default function Hero() {
               </motion.div>
 
               {/* Main Image Card */}
-              <div className="ml-20 mt-20">
-                <div className="relative w-80 h-96 rounded-3xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/Firepro2.jpg"
-                    alt="Fire Safety Equipment"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 350px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-fire-red/80 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-white font-semibold text-lg">Professional Equipment</p>
-                    <p className="text-white/80 text-sm">State-of-the-art fire safety gear</p>
-                  </div>
+              <div className="relative w-80 h-80 rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/Firepro2.jpg"
+                  alt="Fire Safety Equipment"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 350px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-fire-red/80 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <p className="text-white font-semibold text-lg">Professional Equipment</p>
+                  <p className="text-white/80 text-sm">State-of-the-art fire safety gear</p>
                 </div>
               </div>
 
-              {/* Floating Card 2 */}
+              {/* Bottom Card - Satisfaction */}
               <motion.div
-                animate={{ y: [0, 10, 0] }}
+                animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 -right-4 bg-gradient-to-r from-fire-red to-fire-orange rounded-2xl p-6 shadow-2xl w-56"
+                className="bg-gradient-to-r from-fire-red to-fire-orange rounded-2xl p-6 shadow-2xl w-80"
               >
-                <p className="text-white font-bold text-3xl mb-1">98%</p>
+                <p className="text-white font-bold text-3xl mb-2">98%</p>
                 <p className="text-white/90 text-sm">Client Satisfaction Rate</p>
+                <p className="text-white/70 text-xs mt-2">Trusted by hundreds of businesses</p>
               </motion.div>
             </div>
           </motion.div>
