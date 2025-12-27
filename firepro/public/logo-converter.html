@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FirePro Logo Converter - SVG to PNG/JPG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1e3a5f 0%, #dc2626 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+        
+        .instructions {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .instructions h2 {
+            color: #1e3a5f;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .instructions li {
+            margin-bottom: 12px;
+        }
+        
+        .instructions code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #dc2626;
+        }
+        
+        .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .logo-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .logo-card h3 {
+            color: #1e3a5f;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+        
+        .logo-preview {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-preview svg {
+            max-width: 100%;
+            max-height: 180px;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+        
+        .btn-png {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .btn-png:hover {
+            background: #45a049;
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+        }
+        
+        .btn-jpg {
+            background: #2196F3;
+            color: white;
+        }
+        
+        .btn-jpg:hover {
+            background: #0b7dda;
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+        }
+        
+        .btn-svg {
+            background: #FF9800;
+            color: white;
+        }
+        
+        .btn-svg:hover {
+            background: #e68900;
+            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4);
+        }
+        
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            color: #856404;
+            font-size: 0.95em;
+        }
+        
+        .sizes {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            font-size: 0.9em;
+            color: #333;
+            text-align: left;
+        }
+        
+        .sizes strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #1e3a5f;
+        }
+        
+        .size-item {
+            padding: 5px 0;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔥 FirePro Logo Converter</h1>
+        
+        <div class="instructions">
+            <h2>How to Convert SVG Logos to PNG/JPG</h2>
+            <ol>
+                <li><strong>Using Online Tool (Easiest):</strong> Go to <code>convertio.co</code> or <code>cloudconvert.com</code>, upload the SVG file, and convert to PNG or JPG</li>
+                <li><strong>Using Command Line (Node.js):</strong> Install sharp with <code>npm install sharp -D</code>, then use the script in <code>convert-logos.js</code></li>
+                <li><strong>Using Browser (Right-click method):</strong> Right-click the preview below and save as PNG or JPG</li>
+                <li><strong>Using Figma (Professional):</strong> Upload SVG to Figma, export as PNG/JPG with desired dimensions</li>
+                <li><strong>Recommended Sizes:</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Logo (compact): 200x200px for favicons, social media</li>
+                        <li>Logo (full): 300x100px for navbar and headers</li>
+                        <li>Logo (large): 800x800px for print and marketing materials</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="logos-grid">
+            <!-- Logo 1: Compact -->
+            <div class="logo-card">
+                <h3>Logo - Compact</h3>
+                <div class="logo-preview">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 150px; height: 150px;">
+                        <circle cx="50" cy="50" r="48" fill="none" stroke="#dc2626" strokeWidth="2"/>
+                        <path d="M 50 15 C 55 25 60 35 60 45 C 60 58 55 65 50 65 C 45 65 40 58 40 45 C 40 35 45 25 50 15 Z" fill="#dc2626"/>
+                        <path d="M 50 25 C 53 32 56 39 56 45 C 56 56 53 60 50 60 C 47 60 44 56 44 45 C 44 39 47 32 50 25 Z" fill="#ea580c"/>
+                        <ellipse cx="48" cy="40" rx="3" ry="8" fill="#f59e0b" opacity="0.8"/>
+                        <path d="M 50 68 L 65 75 L 65 85 C 65 92 58 97 50 98 C 42 97 35 92 35 85 L 35 75 Z" fill="none" stroke="#1e3a5f" strokeWidth="1.5"/>
+                    </svg>
+                </div>
+                <div class="sizes">
+                    <strong>Recommended Sizes:</strong>
+                    <div class="size-item">• 200x200px (web, social)</div>
+                    <div class="size-item">• 512x512px (app icon)</div>
+                    <div class="size-item">• 1024x1024px (print)</div>
+                </div>
+                <div class="button-group">
+                    <button class="btn-png" onclick="downloadLogoCompactPNG()">⬇ Download PNG</button>
+                    <button class="btn-jpg" onclick="downloadLogoCompactJPG()">⬇ Download JPG</button>
+                    <button class="btn-svg" onclick="downloadLogoCompactSVG()">⬇ Download SVG</button>
+                </div>
+                <div class="note">💡 Best for: Favicons, social media profiles, small displays</div>
+            </div>
+            
+            <!-- Logo 2: Full Brand -->
+            <div class="logo-card">
+                <h3>Logo - Full Brand</h3>
+                <div class="logo-preview">
+                    <svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" style="width: 280px; height: 100px;">
+                        <g transform="translate(10, 20)">
+                            <circle cx="40" cy="40" r="38" fill="none" stroke="#dc2626" strokeWidth="2"/>
+                            <path d="M 40 10 C 45 20 50 30 50 40 C 50 52 45 58 40 58 C 35 58 30 52 30 40 C 30 30 35 20 40 10 Z" fill="#dc2626"/>
+                            <path d="M 40 18 C 43 24 46 32 46 40 C 46 50 43 54 40 54 C 37 54 34 50 34 40 C 34 32 37 24 40 18 Z" fill="#ea580c"/>
+                            <ellipse cx="39" cy="32" rx="2.5" ry="6" fill="#f59e0b" opacity="0.8"/>
+                        </g>
+                        <text x="100" y="55" fontFamily="Arial, sans-serif" fontSize="48" fontWeight="bold" fill="#0f2744">Fire<tspan fill="#dc2626">Pro</tspan></text>
+                        <text x="100" y="75" fontFamily="Arial, sans-serif" fontSize="14" fill="#666" fontWeight="500">Fire Safety Experts</text>
+                    </svg>
+                </div>
+                <div class="sizes">
+                    <strong>Recommended Sizes:</strong>
+                    <div class="size-item">• 300x100px (navbar, small headers)</div>
+                    <div class="size-item">• 600x200px (medium headers)</div>
+                    <div class="size-item">• 1200x400px (large banners)</div>
+                </div>
+                <div class="button-group">
+                    <button class="btn-png" onclick="downloadLogoFullPNG()">⬇ Download PNG</button>
+                    <button class="btn-jpg" onclick="downloadLogoFullJPG()">⬇ Download JPG</button>
+                    <button class="btn-svg" onclick="downloadLogoFullSVG()">⬇ Download SVG</button>
+                </div>
+                <div class="note">💡 Best for: Navbar, headers, email signatures</div>
+            </div>
+            
+            <!-- Logo 3: Favicon -->
+            <div class="logo-card">
+                <h3>Logo - Favicon</h3>
+                <div class="logo-preview">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 120px; height: 120px;">
+                        <rect width="100" height="100" fill="#1e3a5f" rx="20"/>
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="#dc2626" strokeWidth="2"/>
+                        <path d="M 50 20 C 54 29 58 37 58 45 C 58 56 54 62 50 62 C 46 62 42 56 42 45 C 42 37 46 29 50 20 Z" fill="#dc2626"/>
+                        <path d="M 50 28 C 52 34 55 40 55 45 C 55 54 52 58 50 58 C 48 58 45 54 45 45 C 45 40 48 34 50 28 Z" fill="#ea580c"/>
+                        <ellipse cx="49" cy="40" rx="2" ry="6" fill="#f59e0b" opacity="0.8"/>
+                    </svg>
+                </div>
+                <div class="sizes">
+                    <strong>Recommended Sizes:</strong>
+                    <div class="size-item">• 16x16px (browser tab)</div>
+                    <div class="size-item">• 32x32px (standard favicon)</div>
+                    <div class="size-item">• 180x180px (Apple touch icon)</div>
+                </div>
+                <div class="button-group">
+                    <button class="btn-png" onclick="downloadLogoFaviconPNG()">⬇ Download PNG</button>
+                    <button class="btn-jpg" onclick="downloadLogoFaviconJPG()">⬇ Download JPG</button>
+                    <button class="btn-svg" onclick="downloadLogoFaviconSVG()">⬇ Download SVG</button>
+                </div>
+                <div class="note">💡 Best for: Browser tabs, bookmarks, app shortcuts</div>
+            </div>
+        </div>
+        
+        <div style="background: white; border-radius: 12px; padding: 30px; margin-top: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+            <h2 style="color: #1e3a5f; margin-bottom: 20px;">Recommended Conversion Tools</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
+                    <strong>🌐 Online Tools (No Installation):</strong>
+                    <ul style="margin: 10px 0 10px 20px;">
+                        <li>• <a href="https://convertio.co/svg-png/" target="_blank">Convertio.co</a> - Drag & drop, multiple formats</li>
+                        <li>• <a href="https://cloudconvert.com/" target="_blank">CloudConvert</a> - Batch conversion, API available</li>
+                        <li>• <a href="https://online-convert.com/" target="_blank">Online-Convert.com</a> - Free, no registration</li>
+                    </ul>
+                </li>
+                <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
+                    <strong>🖥️ Desktop Tools:</strong>
+                    <ul style="margin: 10px 0 10px 20px;">
+                        <li>• <a href="https://www.figma.com/" target="_blank">Figma</a> - Professional design tool, export options</li>
+                        <li>• <a href="https://inkscape.org/" target="_blank">Inkscape</a> - Free, open-source vector editor</li>
+                        <li>• Adobe Illustrator - Premium, industry standard</li>
+                    </ul>
+                </li>
+                <li style="padding: 10px 0;">
+                    <strong>💻 Node.js Script:</strong>
+                    <ul style="margin: 10px 0 10px 20px;">
+                        <li>• Use the provided <code>convert-logos.js</code> script with Sharp library</li>
+                        <li>• Run: <code>npm run convert-logos</code></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // SVG Data
+        const logos = {
+            compact: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" fill="none" stroke="#dc2626" strokeWidth="2"/>
+                <path d="M 50 15 C 55 25 60 35 60 45 C 60 58 55 65 50 65 C 45 65 40 58 40 45 C 40 35 45 25 50 15 Z" fill="#dc2626"/>
+                <path d="M 50 25 C 53 32 56 39 56 45 C 56 56 53 60 50 60 C 47 60 44 56 44 45 C 44 39 47 32 50 25 Z" fill="#ea580c"/>
+                <ellipse cx="48" cy="40" rx="3" ry="8" fill="#f59e0b" opacity="0.8"/>
+                <path d="M 50 68 L 65 75 L 65 85 C 65 92 58 97 50 98 C 42 97 35 92 35 85 L 35 75 Z" fill="none" stroke="#1e3a5f" strokeWidth="1.5"/>
+            </svg>`,
+            full: `<svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(10, 20)">
+                    <circle cx="40" cy="40" r="38" fill="none" stroke="#dc2626" strokeWidth="2"/>
+                    <path d="M 40 10 C 45 20 50 30 50 40 C 50 52 45 58 40 58 C 35 58 30 52 30 40 C 30 30 35 20 40 10 Z" fill="#dc2626"/>
+                    <path d="M 40 18 C 43 24 46 32 46 40 C 46 50 43 54 40 54 C 37 54 34 50 34 40 C 34 32 37 24 40 18 Z" fill="#ea580c"/>
+                    <ellipse cx="39" cy="32" rx="2.5" ry="6" fill="#f59e0b" opacity="0.8"/>
+                </g>
+                <text x="100" y="55" fontFamily="Arial, sans-serif" fontSize="48" fontWeight="bold" fill="#0f2744">Fire<tspan fill="#dc2626">Pro</tspan></text>
+                <text x="100" y="75" fontFamily="Arial, sans-serif" fontSize="14" fill="#666" fontWeight="500">Fire Safety Experts</text>
+            </svg>`,
+            favicon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="100" fill="#1e3a5f" rx="20"/>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#dc2626" strokeWidth="2"/>
+                <path d="M 50 20 C 54 29 58 37 58 45 C 58 56 54 62 50 62 C 46 62 42 56 42 45 C 42 37 46 29 50 20 Z" fill="#dc2626"/>
+                <path d="M 50 28 C 52 34 55 40 55 45 C 55 54 52 58 50 58 C 48 58 45 54 45 45 C 45 40 48 34 50 28 Z" fill="#ea580c"/>
+                <ellipse cx="49" cy="40" rx="2" ry="6" fill="#f59e0b" opacity="0.8"/>
+            </svg>`
+        };
+        
+        function downloadSVG(svgData, filename) {
+            const blob = new Blob([svgData], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        function svgToPNG(svgData, filename) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const svg = new Image();
+            
+            svg.onload = function() {
+                canvas.width = svg.width;
+                canvas.height = svg.height;
+                ctx.fillStyle = 'white';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(svg, 0, 0);
+                
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = filename;
+                link.click();
+            };
+            
+            svg.src = 'data:image/svg+xml;base64,' + btoa(svgData);
+        }
+        
+        function svgToJPG(svgData, filename) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const svg = new Image();
+            
+            svg.onload = function() {
+                canvas.width = svg.width;
+                canvas.height = svg.height;
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(svg, 0, 0);
+                
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/jpeg', 0.95);
+                link.download = filename;
+                link.click();
+            };
+            
+            svg.src = 'data:image/svg+xml;base64,' + btoa(svgData);
+        }
+        
+        // Compact Logo
+        function downloadLogoCompactPNG() { svgToPNG(logos.compact, 'logo-compact.png'); }
+        function downloadLogoCompactJPG() { svgToJPG(logos.compact, 'logo-compact.jpg'); }
+        function downloadLogoCompactSVG() { downloadSVG(logos.compact, 'logo-compact.svg'); }
+        
+        // Full Logo
+        function downloadLogoFullPNG() { svgToPNG(logos.full, 'logo-full.png'); }
+        function downloadLogoFullJPG() { svgToJPG(logos.full, 'logo-full.jpg'); }
+        function downloadLogoFullSVG() { downloadSVG(logos.full, 'logo-full.svg'); }
+        
+        // Favicon
+        function downloadLogoFaviconPNG() { svgToPNG(logos.favicon, 'favicon.png'); }
+        function downloadLogoFaviconJPG() { svgToJPG(logos.favicon, 'favicon.jpg'); }
+        function downloadLogoFaviconSVG() { downloadSVG(logos.favicon, 'favicon.svg'); }
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="50" cy="50" r="48" fill="none" stroke="#dc2626" strokeWidth="2"/>
+  
+  <!-- Flame Shape -->
+  <path d="M 50 15 C 55 25 60 35 60 45 C 60 58 55 65 50 65 C 45 65 40 58 40 45 C 40 35 45 25 50 15 Z" 
+        fill="#dc2626"/>
+  
+  <!-- Inner Flame - Orange -->
+  <path d="M 50 25 C 53 32 56 39 56 45 C 56 56 53 60 50 60 C 47 60 44 56 44 45 C 44 39 47 32 50 25 Z" 
+        fill="#ea580c"/>
+  
+  <!-- Highlight -->
+  <ellipse cx="48" cy="40" rx="3" ry="8" fill="#f59e0b" opacity="0.8"/>
+  
+  <!-- Shield Outline -->
+  <path d="M 50 68 L 65 75 L 65 85 C 65 92 58 97 50 98 C 42 97 35 92 35 85 L 35 75 Z" 
+        fill="none" stroke="#1e3a5f" strokeWidth="1.5"/>
+</svg>

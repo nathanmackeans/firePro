@@ -1,0 +1,72 @@
+{
+  "name": "FirePro - Fire Safety Solutions",
+  "short_name": "FirePro",
+  "description": "Expert fire safety, oil spill cleanup, and security solutions with 24/7 emergency response",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0f2744",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/Firepro1.jpg",
+      "sizes": "540x720",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/Firepro1.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    }
+  ],
+  "categories": ["business", "utilities"],
+  "shortcuts": [
+    {
+      "name": "Emergency Contact",
+      "short_name": "Emergency",
+      "description": "Call our 24/7 emergency hotline",
+      "url": "tel:+1234567890",
+      "icons": [
+        {
+          "src": "/logo.svg",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "description": "Get a free fire safety assessment",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "/logo.svg",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
