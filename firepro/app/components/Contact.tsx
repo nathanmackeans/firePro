@@ -65,12 +65,12 @@ export default function Contact() {
       content: "info@fireprong.com",
       subtext: "Response within 24hrs",
     },
-    // {
-    //   icon: MapPin,
-    //   title: "Visit Us",
-    //   content: "123 Safety Street",
-    //   subtext: "Fire City, FC 12345",
-    // },
+    {
+      icon: MapPin,
+      title: "Visit Us",
+      content: "No.1 Okoloko Estate by Clinton Auto's, Okirighwre, ",
+      subtext: "- Sapele, Delta State, Nigeria.",
+    },
     {
       icon: Clock,
       title: "Business Hours",
@@ -80,7 +80,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section id="contact" className="pt-24 pb-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
