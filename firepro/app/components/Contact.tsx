@@ -80,7 +80,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="pt-24 pb-32 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section id="contact" className="pt-24 pb-40 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
