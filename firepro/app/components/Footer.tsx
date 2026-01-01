@@ -29,6 +29,10 @@ const services = [
   "Alarm Installation",
   "Fire Safety Training",
   "Emergency Planning",
+  "Safety critical equipment overhauling",
+  "Ambulance & Fire Truck Services",
+  "Oil Spill Cleanup",
+  "Security Services",
 ];
 
 const socialLinks = [
@@ -44,7 +48,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-navy-dark relative">
+    <footer className="bg-navy-dark relative overflow-hidden">
       {/* CTA Banner */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-1">
         <motion.div
@@ -137,29 +141,29 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold text-lg mb-6">Contact Us</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
+              {/* <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-fire-red flex-shrink-0 mt-0.5" />
                 <span className="text-gray-400">
                   123 Safety Street<br />
                   Fire City, FC 12345
                 </span>
-              </li>
+              </li> */}
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-fire-red flex-shrink-0" />
                 <a
                   href="tel:+12345678900"
                   className="text-gray-400 hover:text-fire-orange transition-colors"
                 >
-                  +1 (234) 567-8900
+                  09122784858
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-fire-red flex-shrink-0" />
                 <a
-                  href="mailto:info@firepro.com"
+                  href="mailto:info@fireprong.com"
                   className="text-gray-400 hover:text-fire-orange transition-colors"
                 >
-                  info@firepro.com
+                  info@fireprong.com
                 </a>
               </li>
             </ul>

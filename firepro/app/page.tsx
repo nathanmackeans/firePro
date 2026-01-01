@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Navbar />
       <Hero />
       <Services />
@@ -16,6 +16,6 @@ export default function Home() {
       <WhyUs />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }

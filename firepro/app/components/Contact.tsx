@@ -55,22 +55,22 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: Phone,
-      title: "Emergency Hotline",
-      content: "+1 (234) 567-8900",
+      title: "Contact Us",
+      content: "09122784858",
       subtext: "24/7 Available",
     },
     {
       icon: Mail,
       title: "Email Us",
-      content: "info@firepro.com",
+      content: "info@fireprong.com",
       subtext: "Response within 24hrs",
     },
-    {
-      icon: MapPin,
-      title: "Visit Us",
-      content: "123 Safety Street",
-      subtext: "Fire City, FC 12345",
-    },
+    // {
+    //   icon: MapPin,
+    //   title: "Visit Us",
+    //   content: "123 Safety Street",
+    //   subtext: "Fire City, FC 12345",
+    // },
     {
       icon: Clock,
       title: "Business Hours",
@@ -80,7 +80,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section id="contact" className="py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -318,7 +318,7 @@ export default function Contact() {
                 className="inline-flex items-center gap-2 bg-white text-fire-red px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors"
               >
                 <Phone className="w-5 h-5" />
-                +1 (234) 567-8900
+                09122784858
               </a>
             </motion.div>
           </motion.div>

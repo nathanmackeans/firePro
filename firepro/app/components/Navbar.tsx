@@ -31,7 +31,7 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 overflow-x-hidden ${
         isScrolled
           ? "bg-white/95 backdrop-blur-md shadow-lg"
           : "bg-transparent"
@@ -98,7 +98,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 -mr-2"
+            className="md:hidden p-2"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
@@ -110,16 +110,16 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Full Width */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t"
+            className="md:hidden bg-white border-t w-full"
           >
-            <div className="px-4 py-4 space-y-3 max-h-[calc(100vh-70px)] overflow-y-auto">
+            <div className="px-4 sm:px-6 lg:px-8 py-4 space-y-3 max-h-[calc(100vh-70px)] overflow-y-auto">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -135,7 +135,7 @@ export default function Navbar() {
                 className="flex items-center gap-2 text-gray-700 font-medium hover:text-fire-red transition-colors py-2"
               >
                 <Phone className="w-4 h-4 text-fire-red" />
-                +1 (234) 567-8900
+                09122784858
               </a>
               <Link
                 href="#contact"

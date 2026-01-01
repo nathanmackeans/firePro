@@ -13,6 +13,8 @@ import {
   Shield,
   X,
   CheckCircle,
+  Heart,
+  Cog,
 } from "lucide-react";
 
 const services = [
@@ -160,6 +162,42 @@ const services = [
     },
     color: "from-slate-600 to-slate-400",
   },
+  {
+    icon: Heart,
+    title: "Ambulance Services",
+    shortDesc: "Professional emergency medical response and ambulance services for immediate medical assistance.",
+    details: {
+      description: "Rapid medical response services with trained paramedics and fully equipped ambulances available 24/7.",
+      features: [
+        "24/7 emergency ambulance dispatch",
+        "Trained paramedics and EMTs",
+        "Advanced life support equipment",
+        "Hospital transfer services",
+        "Medical personnel standby",
+        "Coordination with emergency services",
+      ],
+      benefits: "Rapid response saves lives, professional medical care, coordination with hospitals, peace of mind.",
+    },
+    color: "from-red-600 to-pink-500",
+  },
+  {
+    icon: Cog,
+    title: "Safety Critical Equipment Overhauling",
+    shortDesc: "Complete overhaul and refurbishment of safety-critical equipment to ensure optimal performance.",
+    details: {
+      description: "Comprehensive inspection, repair, and overhaul of all safety-critical equipment to meet industry standards.",
+      features: [
+        "Complete equipment inspection and diagnostics",
+        "Precision maintenance and calibration",
+        "Component replacement and upgrades",
+        "Certification and testing protocols",
+        "Documentation and compliance reports",
+        "Preventive maintenance planning",
+      ],
+      benefits: "Extended equipment lifespan, regulatory compliance, improved safety performance, reduced downtime.",
+    },
+    color: "from-purple-600 to-indigo-500",
+  },
 ];
 
 const containerVariants = {
@@ -185,7 +223,7 @@ export default function Services() {
   const [selectedService, setSelectedService] = useState<number | null>(null);
   
   return (
-    <section id="services" className="py-20 sm:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section id="services" className="py-20 sm:py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -214,7 +252,7 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+          className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6"
         >
           {services.map((service, index) => (
             <motion.div
@@ -267,7 +305,7 @@ export default function Services() {
               </div>
 
               {/* Decorative Element */}
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-gradient-to-br from-fire-red/5 to-fire-orange/5 rounded-full group-hover:scale-150 transition-transform duration-500" />
+              <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-br from-fire-red/5 to-fire-orange/5 rounded-full group-hover:scale-125 transition-transform duration-500" />
             </motion.div>
           ))}
         </motion.div>
