@@ -28,11 +28,12 @@ const services = [
   "Equipment Maintenance",
   "Alarm Installation",
   "Fire Safety Training",
-  "Emergency Planning",
-  "Safety critical equipment overhauling",
-  "Ambulance & Fire Truck Services",
-  "Oil Spill Cleanup",
-  "Security Services",
+  "And More...",
+  // "Emergency Planning",
+  // "Safety critical equipment overhauling",
+  // "Ambulance & Fire Truck Services",
+  // "Oil Spill Cleanup",
+  // "Security Services",
 ];
 
 const socialLinks = [
@@ -141,13 +142,15 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold text-lg mb-6">Contact Us</h4>
             <ul className="space-y-4">
-              {/* <li className="flex items-start gap-3">
+              <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-fire-red flex-shrink-0 mt-0.5" />
                 <span className="text-gray-400">
-                  123 Safety Street<br />
-                  Fire City, FC 12345
+                    No.1 Okoloko Estate by Clinton Auto's, Okirighwre,<br />
+                 
+
+                    - Sapele, Delta State, Nigeria.
                 </span>
-              </li> */}
+              </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-fire-red flex-shrink-0" />
                 <a
