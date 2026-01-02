@@ -28,12 +28,11 @@ const services = [
   "Equipment Maintenance",
   "Alarm Installation",
   "Fire Safety Training",
-  "And More...",
-  // "Emergency Planning",
-  // "Safety critical equipment overhauling",
-  // "Ambulance & Fire Truck Services",
-  // "Oil Spill Cleanup",
-  // "Security Services",
+  "Emergency Planning",
+  "Safety critical equipment overhauling",
+  "Ambulance & Fire Truck Services",
+  "Oil Spill Cleanup",
+  "Security Services",
 ];
 
 const socialLinks = [
@@ -49,35 +48,39 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-navy-dark relative overflow-hidden">
-      {/* CTA Banner */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-1">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="relative -top-24 bg-gradient-to-r from-fire-red to-fire-orange rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6"
-        >
-          <div className="text-center md:text-left">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-              Ready to secure your property?
-            </h3>
-            <p className="text-white/90">
-              Get a free fire safety assessment from our experts today.
-            </p>
-          </div>
-          <Link
-            href="#contact"
-            className="bg-white text-fire-red px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors flex-shrink-0"
+    <>
+      {/* CTA Banner - Before Footer */}
+      <div className="bg-white dark:bg-slate-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-r from-fire-red to-fire-orange rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6"
           >
-            Get Started Now
-          </Link>
-        </motion.div>
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                Ready to secure your property?
+              </h3>
+              <p className="text-white/90">
+                Get a free fire safety assessment from our experts today.
+              </p>
+            </div>
+            <Link
+              href="#contact"
+              className="bg-white text-fire-red px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 dark:hover:bg-gray-200 transition-colors flex-shrink-0"
+            >
+              Get Started Now
+            </Link>
+          </motion.div>
+        </div>
       </div>
 
-      {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+      {/* Footer */}
+      <footer className="bg-navy-dark relative overflow-hidden">
+        {/* Main Footer Content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
             <Link href="#home" className="flex items-center gap-2 mb-6">
@@ -190,16 +193,17 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
+        </div>
 
-      {/* Scroll to Top Button */}
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-fire-red to-fire-orange rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all z-40"
-        aria-label="Scroll to top"
-      >
-        <ArrowUp className="w-5 h-5 text-white" />
-      </button>
-    </footer>
+        {/* Scroll to Top Button */}
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-fire-red to-fire-orange rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all z-40"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="w-5 h-5 text-white" />
+        </button>
+      </footer>
+    </>
   );
 }

@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Moon, Sun } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useThemeToggle } from "@/app/hooks/useThemeToggle";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -17,6 +18,7 @@ const navLinks = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { toggleTheme, mounted, isDark } = useThemeToggle();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +35,7 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 overflow-x-hidden ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg"
+          ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -78,10 +80,27 @@ export default function Navbar() {
 
           {/* CTA Button - Desktop */}
           <div className="hidden md:flex items-center gap-3 lg:gap-4">
+            {mounted && (
+              <button
+                onClick={toggleTheme}
+                className={`p-2 rounded-lg transition-colors ${
+                  isScrolled 
+                    ? "bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200" 
+                    : "bg-white/10 text-white"
+                }`}
+                aria-label="Toggle theme"
+              >
+                {isDark ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
+              </button>
+            )}
             <a
               href="tel:+1234567890"
               className={`flex items-center gap-2 text-sm lg:text-base font-medium transition-colors ${
-                isScrolled ? "text-gray-700" : "text-white"
+                isScrolled ? "text-gray-700 dark:text-gray-300" : "text-white"
               }`}
             >
               <Phone className="w-4 h-4 text-fire-red flex-shrink-0" />
@@ -95,18 +114,37 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className={isScrolled ? "text-gray-800" : "text-white"} size={24} />
-            ) : (
-              <Menu className={isScrolled ? "text-gray-800" : "text-white"} size={24} />
+          {/* Mobile Menu Button & Theme Toggle */}
+          <div className="md:hidden flex items-center gap-2">
+            {mounted && (
+              <button
+                onClick={toggleTheme}
+                className={`p-2 rounded-lg transition-colors ${
+                  isScrolled 
+                    ? "bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200" 
+                    : "bg-white/10 text-white"
+                }`}
+                aria-label="Toggle theme"
+              >
+                {isDark ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
+              </button>
             )}
-          </button>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className={isScrolled ? "text-gray-800 dark:text-gray-200" : "text-white"} size={24} />
+              ) : (
+                <Menu className={isScrolled ? "text-gray-800 dark:text-gray-200" : "text-white"} size={24} />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -117,7 +155,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t w-full"
+            className="md:hidden bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-gray-700 w-full"
           >
             <div className="px-4 sm:px-6 lg:px-8 py-4 space-y-3 max-h-[calc(100vh-70px)] overflow-y-auto">
               {navLinks.map((link) => (
@@ -125,7 +163,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-gray-700 font-medium hover:text-fire-red transition-colors py-2"
+                  className="block text-gray-700 dark:text-gray-300 font-medium hover:text-fire-red transition-colors py-2"
                 >
                   {link.name}
                 </Link>

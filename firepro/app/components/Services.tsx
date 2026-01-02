@@ -223,7 +223,7 @@ export default function Services() {
   const [selectedService, setSelectedService] = useState<number | null>(null);
   
   return (
-    <section id="services" className="py-20 sm:py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section id="services" className="py-20 sm:py-24 bg-gradient-to-b from-gray-50 dark:from-slate-900 to-white dark:to-slate-950 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -236,11 +236,11 @@ export default function Services() {
           <span className="inline-block px-3 sm:px-4 py-1.5 bg-fire-red/10 text-fire-red font-semibold rounded-full text-xs sm:text-sm mb-4">
             Our Services
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
             Comprehensive Fire Safety{" "}
             <span className="gradient-text">Solutions</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
             From prevention to emergency response, we provide end-to-end fire safety 
             services to keep your people and property protected.
           </p>
@@ -258,7 +258,7 @@ export default function Services() {
             <motion.div
               key={service.title}
               variants={itemVariants}
-              className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden cursor-pointer"
+              className="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden cursor-pointer"
               onClick={() => setSelectedService(index)}
             >
               {/* Gradient Background on Hover */}
@@ -276,12 +276,12 @@ export default function Services() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-white mb-2 sm:mb-3 transition-colors">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white group-hover:text-white mb-2 sm:mb-3 transition-colors">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 group-hover:text-white/90 transition-colors text-sm leading-relaxed mb-4">
+                <p className="text-gray-600 dark:text-gray-300 group-hover:text-white/90 transition-colors text-sm leading-relaxed mb-4">
                   {service.shortDesc}
                 </p>
 
@@ -357,15 +357,15 @@ export default function Services() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             onClick={(e) => e.stopPropagation()}
-            className="bg-white rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white dark:bg-slate-800 rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
           >
             {/* Close Button */}
             <button
               onClick={() => setSelectedService(null)}
-              className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors"
+              className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors"
               aria-label="Close modal"
             >
-              <X className="w-6 h-6 text-gray-600" />
+              <X className="w-6 h-6 text-gray-600 dark:text-gray-400" />
             </button>
 
             {/* Service Header */}
@@ -381,10 +381,10 @@ export default function Services() {
                 }
               </div>
               <div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
                   {services[selectedService].title}
                 </h2>
-                <p className="text-gray-600 mt-1 text-sm sm:text-base">
+                <p className="text-gray-600 dark:text-gray-300 mt-1 text-sm sm:text-base">
                   {services[selectedService].details.description}
                 </p>
               </div>
@@ -392,7 +392,7 @@ export default function Services() {
 
             {/* Key Features */}
             <div className="mb-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Key Features</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Key Features</h3>
               <div className="grid sm:grid-cols-2 gap-3">
                 {services[selectedService].details.features.map((feature, idx) => (
                   <motion.div
@@ -403,7 +403,7 @@ export default function Services() {
                     className="flex items-start gap-3"
                   >
                     <CheckCircle className="w-5 h-5 text-fire-red flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 text-sm sm:text-base">{feature}</span>
+                    <span className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">{feature}</span>
                   </motion.div>
                 ))}
               </div>

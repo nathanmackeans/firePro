@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Tailwind v4: Define dark variant based on class */
+@variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,6 +11,20 @@
   --fire-yellow: #f59e0b;
   --navy: #1e3a5f;
   --navy-dark: #0f2744;
+}
+
+html.dark,
+.dark {
+  --background: #020617;
+  --foreground: #f8fafc;
+}
+
+/* System preference fallback only when no explicit class is set */
+@media (prefers-color-scheme: dark) {
+  html:not(.light):not(.dark) {
+    --background: #020617;
+    --foreground: #f8fafc;
+  }
 }
 
 @theme inline {
@@ -40,6 +57,16 @@ body {
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
 }
 
 ::-webkit-scrollbar-thumb {

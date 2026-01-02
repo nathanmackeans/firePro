@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden bg-white dark:bg-slate-950 text-gray-900 dark:text-gray-100 transition-colors">
       <Navbar />
       <Hero />
       <Services />

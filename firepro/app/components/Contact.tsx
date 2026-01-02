@@ -80,7 +80,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="pt-24 pb-40 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section id="contact" className="pt-24 pb-20 bg-gradient-to-b from-gray-50 dark:from-slate-900 to-white dark:to-slate-950 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -93,11 +93,11 @@ export default function Contact() {
           <span className="inline-block px-4 py-1.5 bg-fire-red/10 text-fire-red font-semibold rounded-full text-sm mb-4">
             Get In Touch
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Request a Free{" "}
             <span className="gradient-text">Assessment</span>
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-600 dark:text-gray-300">
             Contact our team for a comprehensive fire safety assessment and 
             customized solutions for your property.
           </p>
@@ -110,9 +110,9 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white rounded-3xl shadow-2xl p-8 md:p-10"
+            className="bg-white dark:bg-slate-800 rounded-3xl shadow-2xl p-8 md:p-10"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Send us a message
             </h3>
 
@@ -120,9 +120,9 @@ export default function Contact() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="bg-green-50 border border-green-200 rounded-xl p-8 text-center"
+                className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-xl p-8 text-center"
               >
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-green-100 dark:bg-green-900/40 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg
                     className="w-8 h-8 text-green-600"
                     fill="none"
@@ -137,10 +137,10 @@ export default function Contact() {
                     />
                   </svg>
                 </div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                   Message Sent Successfully!
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-300">
                   Thank you for contacting us. We&apos;ll get back to you within 24 hours.
                 </p>
               </motion.div>
@@ -148,7 +148,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Full Name *
                     </label>
                     <input
@@ -157,12 +157,12 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-fire-red focus:ring-2 focus:ring-fire-red/20 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:border-fire-red focus:ring-2 focus:ring-fire-red/20 outline-none transition-all"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Email Address *
                     </label>
                     <input
@@ -171,7 +171,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-fire-red focus:ring-2 focus:ring-fire-red/20 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:border-fire-red focus:ring-2 focus:ring-fire-red/20 outline-none transition-all"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -179,7 +179,7 @@ export default function Contact() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Phone Number
                     </label>
                     <input
@@ -187,12 +187,12 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-fire-red focus:ring-2 focus:ring-fire-red/20 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:border-fire-red focus:ring-2 focus:ring-fire-red/20 outline-none transition-all"
                       placeholder="+1 (234) 567-8900"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Service Needed *
                     </label>
                     <select
@@ -200,7 +200,7 @@ export default function Contact() {
                       value={formData.service}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-fire-red focus:ring-2 focus:ring-fire-red/20 outline-none transition-all bg-white"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:border-fire-red focus:ring-2 focus:ring-fire-red/20 outline-none transition-all"
                     >
                       <option value="">Select a service</option>
                       <option value="fire-prevention">Fire Prevention & Control</option>
@@ -217,7 +217,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Message *
                   </label>
                   <textarea
@@ -226,7 +226,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-fire-red focus:ring-2 focus:ring-fire-red/20 outline-none transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:border-fire-red focus:ring-2 focus:ring-fire-red/20 outline-none transition-all resize-none"
                     placeholder="Tell us about your fire safety needs..."
                   />
                 </div>
@@ -286,15 +286,15 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-start gap-4 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+                className="flex items-start gap-4 bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-fire-red to-fire-orange rounded-xl flex items-center justify-center flex-shrink-0">
                   <info.icon className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">{info.title}</h4>
-                  <p className="text-gray-800 font-medium">{info.content}</p>
-                  <p className="text-gray-500 text-sm">{info.subtext}</p>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">{info.title}</h4>
+                  <p className="text-gray-800 dark:text-gray-300 font-medium">{info.content}</p>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">{info.subtext}</p>
                 </div>
               </motion.div>
             ))}

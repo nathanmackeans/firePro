@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Providers } from "./providers";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -85,11 +86,38 @@ export default function RootLayout({
         <meta name="theme-color" content="#dc2626" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/logo.svg" />
+        <script dangerouslySetInnerHTML={{__html: `
+          (function() {
+            try {
+              const stored = localStorage.getItem('firepro-theme');
+              const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+              
+              // next-themes stores as plain string
+              let isDark = false;
+              if (stored === 'dark') {
+                isDark = true;
+              } else if (stored === 'light') {
+                isDark = false;
+              } else if (stored === 'system' || stored === null) {
+                isDark = systemDark;
+              }
+              
+              // next-themes only uses "dark" class or no class for light
+              if (isDark) {
+                document.documentElement.classList.add('dark');
+              } else {
+                document.documentElement.classList.remove('dark');
+              }
+            } catch (e) {}
+          })()
+        `}} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

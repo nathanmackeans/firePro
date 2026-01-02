@@ -21,7 +21,7 @@ const stats = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-white overflow-hidden">
+    <section id="about" className="py-24 bg-white dark:bg-slate-950 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left - Image Grid */}
@@ -92,12 +92,12 @@ export default function About() {
               About FirePro
             </span>
 
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
               Your Trusted Partner in{" "}
               <span className="gradient-text">Fire Safety</span>
             </h2>
 
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
               FirePro is a leading private fire service contracting company dedicated 
               to ensuring public safety and property protection from fire-related 
               hazards. With over 15 years of experience, we provide comprehensive 
@@ -122,7 +122,7 @@ export default function About() {
                   className="flex items-center gap-2"
                 >
                   <CheckCircle className="w-5 h-5 text-fire-red flex-shrink-0" />
-                  <span className="text-gray-700 text-sm">{feature}</span>
+                  <span className="text-gray-700 dark:text-gray-300 text-sm">{feature}</span>
                 </motion.div>
               ))}
             </div>
