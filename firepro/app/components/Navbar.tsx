@@ -169,11 +169,11 @@ export default function Navbar() {
                 </Link>
               ))}
               <a
-                href="tel:+1234567890"
+                href="tel:09063488617"
                 className="flex items-center gap-2 text-gray-700 font-medium hover:text-fire-red transition-colors py-2"
               >
                 <Phone className="w-4 h-4 text-fire-red" />
-                09122784858
+                09063488617
               </a>
               <Link
                 href="#contact"

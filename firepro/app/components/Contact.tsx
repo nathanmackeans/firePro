@@ -56,7 +56,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Contact Us",
-      content: "09122784858",
+      content: "09063488617",
       subtext: "24/7 Available",
     },
     {
@@ -314,11 +314,11 @@ export default function Contact() {
                 Call our 24/7 emergency hotline immediately
               </p>
               <a
-                href="tel:+12345678900"
+                href="tel:09063488617"
                 className="inline-flex items-center gap-2 bg-white text-fire-red px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors"
               >
                 <Phone className="w-5 h-5" />
-                09122784858
+                09063488617
               </a>
             </motion.div>
           </motion.div>
