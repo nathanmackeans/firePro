@@ -198,6 +198,24 @@ const services = [
     },
     color: "from-purple-600 to-indigo-500",
   },
+  {
+    icon: Shield,
+    title: "Professional Human Outsourcing",
+    shortDesc: "Expert staffing solutions providing trained professionals for emergency response and safety operations.",
+    details: {
+      description: "Professional human resources and staffing services to augment your emergency response and safety operations teams.",
+      features: [
+        "Trained emergency response personnel",
+        "Fire safety specialists and technicians",
+        "On-demand staffing solutions",
+        "Background verified professionals",
+        "Flexible contract and full-time options",
+        "Continuous training and certification",
+      ],
+      benefits: "Access to qualified professionals, reduced overhead costs, scalable workforce, professional expertise, rapid deployment.",
+    },
+    color: "from-teal-600 to-blue-500",
+  },
 ];
 
 const containerVariants = {

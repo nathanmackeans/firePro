@@ -45,7 +45,7 @@ export default function Navbar() {
           <Link href="#home" className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             <div className="relative w-8 h-8 sm:w-10 sm:h-10">
               <Image
-                src="/logo.svg"
+                src="/Fireprologo.jpeg"
                 alt="FirePro"
                 fill
                 className="object-contain"
