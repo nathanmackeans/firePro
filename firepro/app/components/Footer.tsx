@@ -30,6 +30,7 @@ const services = [
   "Fire Safety Training",
   "Emergency Planning",
   "Safety critical equipment overhauling",
+  "Professional Human Outsourcing",
   "Ambulance & Fire Truck Services",
   "Oil Spill Cleanup",
   "Security Services",
