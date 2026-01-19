@@ -104,7 +104,7 @@ export default function About() {
               fire safety, oil spill cleanup, and security solutions.
             </p>
 
-            <p className="text-gray-600 mb-8">
+            <p className="text-gray-600 dark:text-gray-300 mb-8">
               Our team of certified professionals is committed to delivering 
               exceptional service, utilizing state-of-the-art equipment and 
               industry best practices to protect what matters most to you.
@@ -142,8 +142,8 @@ export default function About() {
                     <stat.icon className="w-6 h-6 text-fire-red" />
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-                    <p className="text-gray-600 text-sm">{stat.label}</p>
+                    <p className="text-2xl font-bold text-gray-900 dark:text-white">{stat.value}</p>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">{stat.label}</p>
                   </div>
                 </motion.div>
               ))}

@@ -216,6 +216,24 @@ const services = [
     },
     color: "from-teal-600 to-blue-500",
   },
+  {
+    icon: ClipboardList,
+    title: "Procurement & Supplies",
+    shortDesc: "Complete supply chain solutions for all fire safety equipment, ensuring you have access to quality products.",
+    details: {
+      description: "Professional procurement and supply services for all fire safety equipment and materials.",
+      features: [
+        "Fire extinguishers and refills",
+        "Sprinkler system components",
+        "Fire suppression systems",
+        "Safety signage and markings",
+        "Personal protective equipment",
+        "Reliable vendor partnerships",
+      ],
+      benefits: "Access to quality equipment, competitive pricing, reliable supply chain, reduced procurement time, expert recommendations.",
+    },
+    color: "from-green-600 to-emerald-500",
+  },
 ];
 
 const containerVariants = {

@@ -34,6 +34,7 @@ const services = [
   "Ambulance & Fire Truck Services",
   "Oil Spill Cleanup",
   "Security Services",
+  "Procurement & Supplies",
 ];
 
 const socialLinks = [
